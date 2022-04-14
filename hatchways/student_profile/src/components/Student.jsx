@@ -1,7 +1,16 @@
 import React, { useState,useEffect } from "react";
 import axios from "axios";
 
+const Test = ({ id,grade }) => {
+  return (
+    <div>
+      Test{id} <span>{grade}% </span> 
+    </div>
+  );
+};
+
 export default function Student(props) {
+	const [check,setCheck] = useState(false);
   const { id,pic,firstName, lastName, email,company, skill, grades} = props;
 	let sum=0;
 	for(let i=0;i<grades.length;i++){
@@ -10,6 +19,10 @@ export default function Student(props) {
 	}
 
 	const average = sum / grades.length;
+
+	function expand(){
+			setCheck(true);
+		}
 	
   return (
     
@@ -23,12 +36,18 @@ export default function Student(props) {
 			</div>
         <div className="details">
       
-					<h3 className="name">{firstName} {lastName}</h3>
+					<h3 className="name">{firstName} {lastName}
+					<span id="plus-icon" onClick={expand}> &#43;</span></h3>
 					<div className= "info">
 					Email: {email} <br/>
 					Company: {company} <br/>
 					Skill: {skill} <br/>
-					Average: {average}%
+					Average: {average}% <br/>
+					{check &&
+					grades.map((grade,index)=> (
+						<Test key={id} grade={grade} id={index}/>
+					)
+					)}
 					</div>
 				</div>	
 					{/* <button className="btn btn-primary"onClick={() => add_to_request(id) }>Request</button>  */}
@@ -37,3 +56,4 @@ export default function Student(props) {
 
   );
 }
+

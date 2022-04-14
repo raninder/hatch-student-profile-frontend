@@ -60,3 +60,8 @@ input{
   border-bottom: 1px solid black;
   padding: 22px 20px;
 }
+
+#plus-icon{
+  float: right;
+  margin-right:60px;
+}
