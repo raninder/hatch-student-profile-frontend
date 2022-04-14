@@ -1,8 +1,5 @@
 import React, { useState,useEffect } from "react";
 import axios from "axios";
-// import { useAlert } from 'react-alert';
-// import "../styles/DispGoods.css";
-// import { useHistory } from 'react-router-dom';
 
 export default function Student(props) {
   const { id,pic,firstName, lastName, email,company, skill, grades} = props;
@@ -11,11 +8,8 @@ export default function Student(props) {
 	console.log("grades-i",grades[i]);
 	sum+=Number(grades[i]);
 	}
-	console.log("sum",sum);
+
 	const average = sum / grades.length;
-	console.log("avg",average);
-	// console.log("grades",grades[0]);
-	// const average = grades.reduce((a,b) => a + b, 0) / grades.length;
 	
   return (
     
@@ -28,8 +22,7 @@ export default function Student(props) {
         </div>
 			</div>
         <div className="details">
-            {/* <section class="new-tweet"></section> */}
-					{/* <img src = {pic} /> <br/> */}
+      
 					<h3 className="name">{firstName} {lastName}</h3>
 					<div className= "info">
 					Email: {email} <br/>
