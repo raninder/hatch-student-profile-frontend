@@ -54,3 +54,9 @@ code {
   margin-left:30px;
   margin-bottom: 40px;
 }
+input{
+  width:100%;
+  border: none;
+  border-bottom: 1px solid black;
+  padding: 22px 20px;
+}
