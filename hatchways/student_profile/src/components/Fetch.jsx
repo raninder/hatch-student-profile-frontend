@@ -9,14 +9,13 @@ export default function Fetch() {
   useEffect(() => {
     axios.get(url)
     .then((response) => {
-      console.log("data1",response.data.students);
       setData(response.data.students);
     })
     .catch(error => {
       console.log('Error: ' + error);
       })
   }, []);
-	console.log("data2",data);
+	
 	return(
 		<>
       <section>

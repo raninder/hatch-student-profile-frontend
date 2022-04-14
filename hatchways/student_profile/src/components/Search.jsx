@@ -10,8 +10,8 @@ export default function Search({data}) {
   };
   
   return (
-    <div className='about'>
-        <input type="text"
+    <div>
+        <input type="text" className="search"
           onChange={inputHandler}
           placeholder="Search by name"
         />

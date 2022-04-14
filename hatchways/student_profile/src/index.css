@@ -54,7 +54,7 @@ code {
   margin-left:30px;
   margin-bottom: 40px;
 }
-input{
+.search{
   width:100%;
   border: none;
   border-bottom: 1px solid black;
@@ -64,4 +64,13 @@ input{
 #plus-icon{
   float: right;
   margin-right:60px;
+}
+
+.tag{
+  border: none;
+  border-bottom: 1px solid black;
+  padding: 20px 20px;
+}
+.tag-button{
+  margin-top:20px;
 }
