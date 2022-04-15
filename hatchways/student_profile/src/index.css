@@ -1,76 +1,109 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
-.container{
-	display:flex;
-	flex-direction: row;
-	width:100%;
-  border-bottom: 2px solid rgba(0,0,0,0.1);
-	align-items: center;
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  /* align-items: center; */
+  font-family: Raleway;
 }
-.left{
-  width:20%;
+
+.left {
+  width: 20%;
 }
+
 .image-cropper {
+  margin-top: 20px;
   width: 100px;
   height: 100px;
   position: relative;
   overflow: hidden;
   border-radius: 50%;
-  float:right;
+  float: right;
   margin-right: 20px;
   border: 1px solid black;
 }
+
 .profile-pic {
   display: inline;
   margin: 0 auto;
   height: 100%;
   width: auto;
 }
-.details{
+
+.details {
   width: 80%;
 }
+
 .details .name {
-  text-align:left;
+  text-align: left;
   text-transform: uppercase;
   font-size: 2rem;
   font-weight: 500;
   letter-spacing: 2px;
-  }
+}
+
 .info {
   letter-spacing: 1px;
   padding-bottom: 2px;
   text-align: left;
-  margin-left:30px;
+  margin-left: 30px;
   margin-bottom: 40px;
 }
-.search{
-  width:100%;
+
+.search {
+  width: 100%;
   border: none;
   border-bottom: 1px solid black;
   padding: 22px 20px;
 }
 
-#plus-icon{
+#plus-icon {
   float: right;
-  margin-right:60px;
+  margin-right: 60px;
 }
 
-.tag{
+.tag {
   border: none;
   border-bottom: 1px solid black;
   padding: 20px 20px;
 }
-.tag-button{
-  margin-top:20px;
+
+.tag-button {
+  margin-top: 20px;
 }
+
+@media screen and (max-width: 480px) {
+  .left{
+    width:100%;
+  }
+  .details{
+    width:100%;
+  }
+  .image-copper {
+    float: none;
+    height: 200px;
+    width: 200px;
+  }
+  .details {
+    margin-top: 50px;
+    width: 100%;
+    height: auto;
+  }
+}
+/*# sourceMappingURL=index.css.map */
