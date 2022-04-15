@@ -1,13 +1,14 @@
-import React, { useState,useEffect } from "react";
-import axios from "axios";
+import React, { useState} from "react";
 import Test from './Test';
 import Tag from './Tag';
+
 
 export default function Student(props) {
 	const [check,setCheck] = useState(false);
 	const [plus, setPlus] = useState(true);
 	const [tag,setTag] = useState([]);
   const [input, setInput] = useState(""); 
+
 
   const { id,pic,firstName, lastName, email,company, skill, grades} = props;
 	let sum=0;
@@ -16,6 +17,8 @@ export default function Student(props) {
 	}
 
 	const average = sum / grades.length;
+
+	const obj = {id, firstName, lastName,email,company,skill,grades};
 
 	function expand(){
 		setCheck(true);	
@@ -27,7 +30,6 @@ export default function Student(props) {
 	}
 	const saveInput = (e) => {
     setInput(e.target.value);
-		console.log("vlaue", e.target.value);
   };
 	
 	function addTag(e){
@@ -36,9 +38,16 @@ export default function Student(props) {
     tags.push(input);
     setTag(tags);
 		setInput("");
-	}
-	
+	}    
+
+	//adding tags data to props object 
+	const final = Object.assign(obj,tag);
+
+	localStorage.setItem("finalData", JSON.stringify(final));
+
   return (
+		<>
+	
 		 <section className="container">
 			 <div className="left">
         <div className="image-cropper">
@@ -67,8 +76,8 @@ export default function Student(props) {
 						}
 
 						{tag &&
-							tag.map((t) =>
-							<Tag key={id} tag = {t} />)
+							tag.map((t,index) =>
+							<Tag key={index} tag = {t} />)
 						}
 						<br/> 
 					
@@ -82,6 +91,7 @@ export default function Student(props) {
 					</div>
 				</div>
 		</section>
+		</>
 	);
 }
 
